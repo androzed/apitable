@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  aitable:
+    build: .
+    container_name: aitable
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgres://postgres:MRMNPCCoVFkHylvvrRXi8F90DzdSHrZZnjfZZjok36pLHeIGvv2J1wdPH6Ldmt3B@aogwcwcc4wkcwssgsgw4oowc:5432/postgres
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./aitable_data:/data
